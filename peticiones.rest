@@ -1,0 +1,106 @@
+@url = http://localhost:3000/api
+
+###
+GET {{url}}/products
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjNjN2E5NzNiYWI1MjViNTg1ZjQwZTg1IiwidXNlcl9yb2xlIjoicmVndWxhciIsImV4cCI6MTY3NDYzOTM0OCwiaWF0IjoxNjc0MDM0NTQ4fQ.VptYuvz8O6BFiwjwU9sYS57JiEqaAy-nFxmV8fZuaxk
+
+###
+GET {{url}}/products/moda
+
+###
+GET {{url}}/products/min/20/max/35
+
+###
+GET {{url}}/products/actives
+
+###
+POST {{url}}/products
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjNjN2E5NzNiYWI1MjViNTg1ZjQwZTg1IiwidXNlcl9yb2xlIjoicmVndWxhciIsImV4cCI6MTY3NDYzOTM0OCwiaWF0IjoxNjc0MDM0NTQ4fQ.VptYuvz8O6BFiwjwU9sYS57JiEqaAy-nFxmV8fZuaxk
+
+{
+  "name": "camiseta rick & morty",
+  "description": "Para ir molón",
+  "price": 28,
+  "department": "moda",
+  "available": true,
+  "stock": 15,
+  "image": ""
+}
+
+###
+PUT {{url}}/products/63c7e1dab3bd2f6e6d9b1226
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjNjN2E5NzNiYWI1MjViNTg1ZjQwZTg1IiwidXNlcl9yb2xlIjoicmVndWxhciIsImV4cCI6MTY3NDYzOTM0OCwiaWF0IjoxNjc0MDM0NTQ4fQ.VptYuvz8O6BFiwjwU9sYS57JiEqaAy-nFxmV8fZuaxk
+
+{
+  "price": 21,
+  "available":false
+}
+
+###
+DELETE {{url}}/products/63c663a54062fd55e166aaf5
+
+###########
+#  USERS  #
+###########
+
+GET {{url}}/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjNjN2E5NzNiYWI1MjViNTg1ZjQwZTg1IiwidXNlcl9yb2xlIjoicmVndWxhciIsImV4cCI6MTY3NDYzOTM0OCwiaWF0IjoxNjc0MDM0NTQ4fQ.VptYuvz8O6BFiwjwU9sYS57JiEqaAy-nFxmV8fZuaxk
+
+###
+GET {{url}}/users/cart 
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjNjN2E5NzNiYWI1MjViNTg1ZjQwZTg1IiwidXNlcl9yb2xlIjoicmVndWxhciIsImV4cCI6MTY3NDYzOTM0OCwiaWF0IjoxNjc0MDM0NTQ4fQ.VptYuvz8O6BFiwjwU9sYS57JiEqaAy-nFxmV8fZuaxk
+
+
+###
+GET {{url}}/users/cart/add/63c54c11bcf5ccdbd7117a40
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjNjN2E5NzNiYWI1MjViNTg1ZjQwZTg1IiwidXNlcl9yb2xlIjoicmVndWxhciIsImV4cCI6MTY3NDYzOTM0OCwiaWF0IjoxNjc0MDM0NTQ4fQ.VptYuvz8O6BFiwjwU9sYS57JiEqaAy-nFxmV8fZuaxk
+
+###
+GET {{url}}/users/cart/remove/63c54c11bcf5ccdbd7117a40
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjNjN2E5NzNiYWI1MjViNTg1ZjQwZTg1IiwidXNlcl9yb2xlIjoicmVndWxhciIsImV4cCI6MTY3NDYzOTM0OCwiaWF0IjoxNjc0MDM0NTQ4fQ.VptYuvz8O6BFiwjwU9sYS57JiEqaAy-nFxmV8fZuaxk
+
+
+###
+POST {{url}}/users
+Content-Type: application/json
+
+# {
+#   "username": "mario",
+#   "email": "mario@mail.com",
+#   "password": "12345",
+#   "address": "C Gran via 23",
+#   "age": 23,
+#   "role": "admin"
+# }
+
+{
+  "username": "miriam",
+  "email": "miriam@mail.com",
+  "password": "12345",
+  "address": "C Falsa 13",
+  "age": 23,
+  "role": "regular"
+}
+
+###
+POST {{url}}/users/login
+Content-Type: application/json
+
+{
+  "email": "luis@mail.com",
+  "password": "12345"
+}
+
+###
+PUT {{url}}/users/63c7a49274e0710470e1edb3
+Content-Type: application/json
+
+{
+"age": 53,
+"role": "admin"
+}
+
+###
+DELETE {{url}}/users/63c7a49274e0710470e1edb3
