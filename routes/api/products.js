@@ -10,12 +10,33 @@ const { newProduct } = require('../../tests/helpers/validators');
 
 
 router.get('/', async (req, res) => {
+
+  const { page = 1, limit = 3 } = req.query;
+  console.log(page, limit);
+  /**
+  * page = 1 skip = 0 limit = 5
+  * page = 2 skip = 5 limit = 5
+  * page = 3 skip = 10 limit = 5
+  */
   try {
-    const products = await Product.find().populate('owner');
-    for (let product of products) {
-      console.log(product.price_tax);
-    }
-    res.json(products);
+    const products = await Product.find()
+      .skip((page - 1) * limit)//calculo de los productos que salta por página según el limite
+      .limit(limit)//coge el limit que le pasemos en la url 
+      .populate('owner');
+
+    const total = await Product.count();//Productos totales de la colección (tabla)
+    console.log(total);
+    res.json({
+      info: {
+        current_page: parseInt(page),
+        count: total,
+        pages: Math.ceil(total / limit) //redondeamos el resultado hacía arriba
+      },
+      results: products
+    })
+    // for (let product of products) {
+    //   console.log(product.price_tax);//propiedad calculada
+    // }
   } catch (err) {
     res.json({ fatal: err.message });
   }
