@@ -1,5 +1,6 @@
-@url = http://localhost:3000/api
+# @url = http://localhost:3000/api
 # @url = https://da3b-87-217-167-7.eu.ngrok.io/api
+@url=https://tienda-online-z3xy.onrender.com
 ###
 GET {{url}}/products/?page=2
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjNjN2E5NzNiYWI1MjViNTg1ZjQwZTg1IiwidXNlcl9yb2xlIjoicmVndWxhciIsImV4cCI6MTY3NDYzOTM0OCwiaWF0IjoxNjc0MDM0NTQ4fQ.VptYuvz8O6BFiwjwU9sYS57JiEqaAy-nFxmV8fZuaxk
